@@ -12,7 +12,7 @@
     const botao = document.querySelector('.botao-tema');
     const temaEscuro = () => raiz.dataset.tema ? raiz.dataset.tema === 'escuro' : preferencia.matches;
     const atualizar = () => {
-      botao.textContent = temaEscuro() ? 'Ativar tema claro' : 'Ativar tema escuro';
+      botao.textContent = temaEscuro() ? 'Tema claro' : 'Tema escuro';
     };
 
     atualizar();
