@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --texto: #1c1c1e;
   --fundo: #edf4f2;
   --superficie: #fff;
@@ -384,4 +385,33 @@ button {
 input[type="date"]:focus-within {
   outline: 3px solid var(--foco);
   outline-offset: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --fundo: #101b1b;
+    --superficie: #192827;
+    --texto: #eff8f6;
+    --cabecalho: #143635;
+    --menu: #204846;
+    --texto-suave: #c0d6d1;
+    --superficie-suave: #263b39;
+    --painel: #203432;
+    --borda-painel: #45615d;
+    --borda-tabela: #536f6a;
+    --borda-controle: #79938d;
+    --acao: #ffb699;
+    --texto-acao: #3d1b0e;
+    --aviso: #40331f;
+    --borda-aviso: #9c7d4c;
+    --foco: #96e6d4;
+    --instrucao: #c1d7d2;
+    --erro: #ffaaa0;
+    --fundo-erro: #492b28;
+    --link-erro: #ffd3cd;
+    --fundo-sucesso: #233d30;
+    --borda-sucesso: #85c799;
+    --link: #a1ead9;
+  }
 }
