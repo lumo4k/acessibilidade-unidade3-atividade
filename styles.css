@@ -325,6 +325,9 @@ legend {
     padding: 6px;
     overflow-wrap: anywhere;
   }
+  table {
+    table-layout: fixed;
+  }
 }
 
 [hidden] {
