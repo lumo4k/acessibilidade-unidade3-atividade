@@ -183,11 +183,12 @@ input[type="email"],
 input[type="password"],
 input[type="tel"] {
   width: 100%;
+  min-width: 0;
   padding: 9px;
   border: 1px solid var(--borda-controle);
   border-radius: 5px;
   margin-bottom: 12px;
-  font-size: 14px;
+  font: inherit;
 }
 .erro {
   color: var(--erro);
@@ -335,12 +336,13 @@ legend {
 }
 .pagina-cadastro {
   max-width: 780px;
-  padding: 24px;
+  padding: clamp(16px, 4vw, 24px);
   margin: 14px auto 0;
 }
 .pagina-cadastro input[type="date"],
 .pagina-cadastro select {
   width: 100%;
+  min-width: 0;
   padding: 9px;
   border: 1px solid var(--borda-controle);
   border-radius: 5px;
