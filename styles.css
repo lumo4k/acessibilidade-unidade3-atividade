@@ -1,5 +1,6 @@
 :root {
   color-scheme: light;
+  --margem-pagina: clamp(16px, 4vw, 40px);
   --texto: light-dark(#1c1c1e, #eff8f6);
   --fundo: light-dark(#edf4f2, #101b1b);
   --superficie: light-dark(#fff, #192827);
@@ -84,14 +85,13 @@ body {
 .wrap {
   max-width: 1040px;
   margin: 0 auto;
-  padding-top: 14px;
   background: var(--superficie);
 }
 #topo {
   position: relative;
   background: var(--cabecalho);
   color: var(--texto-invertido);
-  padding: 32px 24px;
+  padding: clamp(24px, 5vw, 40px) var(--margem-pagina);
 }
 .titulo-principal {
   font-size: clamp(1.45rem, 4vw, 1.875rem);
@@ -104,7 +104,7 @@ body {
 }
 #menu {
   background: var(--menu);
-  padding: 10px 24px;
+  padding: 10px var(--margem-pagina);
 }
 #menu a {
   color: var(--texto-invertido);
@@ -117,7 +117,7 @@ body {
   text-decoration: underline;
 }
 #trilha {
-  padding: 10px 24px;
+  padding: 12px var(--margem-pagina);
   font-size: 13px;
   color: var(--texto-suave);
   background: var(--superficie-suave);
@@ -127,9 +127,8 @@ body {
 }
 #miolo {
   display: flex;
-  gap: 28px;
-  padding: 24px;
-  margin-top: 14px;
+  gap: clamp(24px, 4vw, 40px);
+  padding: clamp(28px, 5vw, 48px) var(--margem-pagina);
   align-items: flex-start;
 }
 #conteudo {
@@ -140,18 +139,20 @@ body {
   flex: 0 0 250px;
   background: var(--painel);
   border: 1px solid var(--borda-painel);
-  padding: 16px;
+  padding: 20px;
   border-radius: 8px;
   font-size: 14px;
 }
 .titulo-pagina {
   font-size: 28px;
   font-weight: 800;
-  margin: 0 0 6px;
+  margin: 0 0 12px;
 }
-h2,
-h3 {
-  margin: 26px 0 10px;
+main h2 {
+  margin: clamp(28px, 5vw, 40px) 0 12px;
+}
+main h3 {
+  margin: 20px 0 12px;
 }
 h3 {
   font-size: 17px;
@@ -163,12 +164,12 @@ h2 {
 .produtos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-  gap: 12px;
+  gap: 16px;
 }
 .cartao {
   border: 1px solid var(--borda-painel);
   border-radius: 8px;
-  padding: 14px;
+  padding: clamp(16px, 2.5vw, 24px);
   margin: 0;
 }
 .botao {
@@ -218,9 +219,8 @@ input[type="tel"] {
 #rodape {
   background: var(--cabecalho);
   color: var(--texto-cabecalho);
-  padding: 20px 24px;
+  padding: 24px var(--margem-pagina);
   font-size: 13px;
-  margin-top: 10px;
 }
 #rodape a {
   color: var(--link-rodape);
@@ -264,7 +264,7 @@ input[type="tel"] {
   margin: 0;
 }
 .preco {
-  margin: 0;
+  margin: 4px 0 14px;
 }
 .botao {
   border: 0;
@@ -274,7 +274,10 @@ input[type="tel"] {
 .categorias-titulo {
   font-size: 32px;
   font-weight: 400;
-  margin: 26px 0 0;
+}
+.categorias {
+  display: grid;
+  gap: 6px;
 }
 caption {
   text-align: left;
@@ -333,13 +336,6 @@ legend {
   .lateral {
     flex: auto;
     width: 100%;
-  }
-  #topo,
-  #menu,
-  #trilha,
-  #miolo,
-  #rodape {
-    padding-inline: 16px;
   }
   td,
   th {
