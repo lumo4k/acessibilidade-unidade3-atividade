@@ -74,7 +74,7 @@ body {
   padding: 32px 24px;
 }
 .titulo-principal {
-  font-size: 30px;
+  font-size: clamp(1.45rem, 4vw, 1.875rem);
   font-weight: 800;
   letter-spacing: -0.5px;
 }
@@ -89,10 +89,9 @@ body {
 #menu a {
   color: var(--texto-invertido);
   text-decoration: none;
-  margin-right: 20px;
   font-size: 15px;
   display: inline-block;
-  padding: 4px 0;
+  padding: 7px 0;
 }
 #menu a:hover {
   text-decoration: underline;
@@ -141,11 +140,16 @@ h3 {
 h2 {
   font-size: 21px;
 }
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 12px;
+}
 .cartao {
   border: 1px solid var(--borda-painel);
   border-radius: 8px;
   padding: 14px;
-  margin: 10px 0;
+  margin: 0;
 }
 .botao {
   display: inline-block;
@@ -179,11 +183,12 @@ input[type="email"],
 input[type="password"],
 input[type="tel"] {
   width: 100%;
+  min-width: 0;
   padding: 9px;
   border: 1px solid var(--borda-controle);
   border-radius: 5px;
   margin-bottom: 12px;
-  font-size: 14px;
+  font: inherit;
 }
 .erro {
   color: var(--erro);
@@ -226,6 +231,9 @@ input[type="tel"] {
 #trilha ol {
   display: flex;
   flex-wrap: wrap;
+}
+#menu ul {
+  gap: 2px 20px;
 }
 #trilha li + li::before {
   content: " > ";
@@ -306,13 +314,20 @@ legend {
     flex: auto;
     width: 100%;
   }
-  #topo {
-    gap: 12px;
+  #topo,
+  #menu,
+  #trilha,
+  #miolo,
+  #rodape {
+    padding-inline: 16px;
   }
   td,
   th {
     padding: 6px;
     overflow-wrap: anywhere;
+  }
+  table {
+    table-layout: fixed;
   }
 }
 
@@ -321,12 +336,13 @@ legend {
 }
 .pagina-cadastro {
   max-width: 780px;
-  padding: 24px;
+  padding: clamp(16px, 4vw, 24px);
   margin: 14px auto 0;
 }
 .pagina-cadastro input[type="date"],
 .pagina-cadastro select {
   width: 100%;
+  min-width: 0;
   padding: 9px;
   border: 1px solid var(--borda-controle);
   border-radius: 5px;
