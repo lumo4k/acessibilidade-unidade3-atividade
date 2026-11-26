@@ -415,3 +415,23 @@ input[type="date"]:focus-within {
     --link: #a1ead9;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .botao {
+    transition: box-shadow 180ms ease;
+  }
+}
+
+.botao:hover:not(:disabled) {
+  box-shadow: 0 0 0 2px var(--superficie), 0 0 0 4px var(--acao);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .botao {
+    transition: none;
+  }
+}
