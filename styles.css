@@ -31,18 +31,37 @@
 
 .atalho-conteudo {
   position: absolute;
-  z-index: 1;
-  top: 12px;
-  left: 12px;
-  padding: 10px 16px;
+  inset-block-start: 8px;
+  inset-inline-start: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: calc(100% - 32px);
+  padding: 8px 14px;
+  border: 1px solid var(--borda-controle);
+  border-radius: 8px;
   background: var(--superficie);
-  color: var(--texto);
+  color: var(--link);
+  font-weight: 700;
+  text-decoration: none;
+}
+.atalho-conteudo::after {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  margin-inline-start: 0.75em;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 .atalho-conteudo:not(:focus) {
   clip-path: inset(50%);
   width: 1px;
   height: 1px;
+  min-height: 0;
   padding: 0;
+  border: 0;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -69,6 +88,7 @@ body {
   background: var(--superficie);
 }
 #topo {
+  position: relative;
   background: var(--cabecalho);
   color: var(--texto-invertido);
   padding: 32px 24px;
