@@ -1,11 +1,41 @@
+:root {
+  --texto: #1c1c1e;
+  --fundo: #f6f6f8;
+  --superficie: #fff;
+  --cabecalho: #1f2a44;
+  --texto-invertido: #fff;
+  --texto-cabecalho: #b9c4de;
+  --menu: #2c3a5e;
+  --texto-suave: #5b6478;
+  --superficie-suave: #eef0f5;
+  --painel: #f2f4f9;
+  --borda-painel: #e0e4ee;
+  --acao: #c0392b;
+  --borda-tabela: #d9dee9;
+  --borda-controle: #c3c9d6;
+  --link-rodape: #dbe2f2;
+  --aviso: #fff8e1;
+  --borda-aviso: #f0dfa8;
+  --foco: #005fcc;
+  --instrucao: #454d60;
+  --erro: #a3261b;
+  --fundo-erro: #fff4f2;
+  --link-erro: #8d2118;
+  --fundo-sucesso: #edf7ee;
+  --borda-sucesso: #286238;
+  --link: #075c82;
+  --texto-acao: #fff;
+  --foco-invertido: #fff;
+}
+
 .atalho-conteudo {
   position: absolute;
   z-index: 1;
   top: 12px;
   left: 12px;
   padding: 10px 16px;
-  background: #fff;
-  color: #1c1c1e;
+  background: var(--superficie);
+  color: var(--texto);
 }
 .atalho-conteudo:not(:focus) {
   clip-path: inset(50%);
@@ -22,19 +52,19 @@
 body {
   margin: 0;
   font-family: system-ui, "Segoe UI", Arial, sans-serif;
-  color: #1c1c1e;
-  background: #f6f6f8;
+  color: var(--texto);
+  background: var(--fundo);
   line-height: 1.55;
 }
 .wrap {
   max-width: 1040px;
   margin: 0 auto;
   padding-top: 14px;
-  background: #fff;
+  background: var(--superficie);
 }
 #topo {
-  background: #1f2a44;
-  color: #fff;
+  background: var(--cabecalho);
+  color: var(--texto-invertido);
   padding: 32px 24px;
 }
 .titulo-principal {
@@ -43,15 +73,15 @@ body {
   letter-spacing: -0.5px;
 }
 .subtitulo {
-  color: #b9c4de;
+  color: var(--texto-cabecalho);
   font-size: 14px;
 }
 #menu {
-  background: #2c3a5e;
+  background: var(--menu);
   padding: 10px 24px;
 }
 #menu a {
-  color: #fff;
+  color: var(--texto-invertido);
   text-decoration: none;
   margin-right: 20px;
   font-size: 15px;
@@ -64,11 +94,11 @@ body {
 #trilha {
   padding: 10px 24px;
   font-size: 13px;
-  color: #5b6478;
-  background: #eef0f5;
+  color: var(--texto-suave);
+  background: var(--superficie-suave);
 }
 #trilha a {
-  color: #5b6478;
+  color: var(--texto-suave);
 }
 #miolo {
   display: flex;
@@ -83,8 +113,8 @@ body {
 }
 .lateral {
   flex: 0 0 250px;
-  background: #f2f4f9;
-  border: 1px solid #e0e4ee;
+  background: var(--painel);
+  border: 1px solid var(--borda-painel);
   padding: 16px;
   border-radius: 8px;
   font-size: 14px;
@@ -106,15 +136,15 @@ h2 {
   font-size: 21px;
 }
 .cartao {
-  border: 1px solid #e0e4ee;
+  border: 1px solid var(--borda-painel);
   border-radius: 8px;
   padding: 14px;
   margin: 10px 0;
 }
 .botao {
   display: inline-block;
-  background: #c0392b;
-  color: #fff;
+  background: var(--acao);
+  color: var(--texto-acao);
   padding: 9px 16px;
   border-radius: 6px;
   cursor: pointer;
@@ -129,12 +159,12 @@ table {
 }
 td,
 th {
-  border: 1px solid #d9dee9;
+  border: 1px solid var(--borda-tabela);
   padding: 9px 11px;
   text-align: left;
 }
 .cab {
-  background: #eef0f5;
+  background: var(--superficie-suave);
   font-weight: 700;
 }
 input[type="text"],
@@ -143,29 +173,29 @@ input[type="password"],
 input[type="tel"] {
   width: 100%;
   padding: 9px;
-  border: 1px solid #c3c9d6;
+  border: 1px solid var(--borda-controle);
   border-radius: 5px;
   margin-bottom: 12px;
   font-size: 14px;
 }
 .erro {
-  color: #c0392b;
+  color: var(--erro);
   font-size: 13px;
   margin: -6px 0 12px;
 }
 #rodape {
-  background: #1f2a44;
-  color: #b9c4de;
+  background: var(--cabecalho);
+  color: var(--texto-cabecalho);
   padding: 20px 24px;
   font-size: 13px;
   margin-top: 10px;
 }
 #rodape a {
-  color: #dbe2f2;
+  color: var(--link-rodape);
 }
 .aviso {
-  background: #fff8e1;
-  border: 1px solid #f0dfa8;
+  background: var(--aviso);
+  border: 1px solid var(--borda-aviso);
   padding: 12px 14px;
   border-radius: 6px;
   font-size: 14px;
@@ -224,7 +254,7 @@ caption {
 fieldset {
   min-width: 0;
   margin: 14px 0;
-  border: 1px solid #c3c9d6;
+  border: 1px solid var(--borda-controle);
   padding: 10px 14px;
 }
 legend {
@@ -242,13 +272,13 @@ legend {
   margin-top: 22px;
 }
 :focus-visible {
-  outline: 3px solid #005fcc;
+  outline: 3px solid var(--foco);
   outline-offset: 3px;
 }
 #topo :focus-visible,
 #menu :focus-visible,
 #rodape :focus-visible {
-  outline-color: #fff;
+  outline-color: var(--foco-invertido);
 }
 .sr-only {
   position: absolute;
@@ -291,17 +321,17 @@ legend {
 .pagina-cadastro select {
   width: 100%;
   padding: 9px;
-  border: 1px solid #c3c9d6;
+  border: 1px solid var(--borda-controle);
   border-radius: 5px;
   margin-bottom: 12px;
   font: inherit;
-  background: #fff;
+  background: var(--superficie);
   color: inherit;
 }
 .instrucao {
   margin: 0 0 6px;
   font-size: 14px;
-  color: #454d60;
+  color: var(--instrucao);
 }
 .erro:empty,
 .resumo-erros:empty,
@@ -314,27 +344,27 @@ legend {
   margin: 0 0 12px;
 }
 [aria-invalid="true"] {
-  border: 2px solid #a3261b !important;
+  border: 2px solid var(--erro) !important;
 }
 .resumo-erros {
   padding: 16px;
   margin: 20px 0;
-  border: 2px solid #a3261b;
-  background: #fff4f2;
+  border: 2px solid var(--erro);
+  background: var(--fundo-erro);
 }
 .resumo-erros h2 {
   margin: 0 0 8px;
 }
 .resumo-erros a {
-  color: #8d2118;
+  color: var(--link-erro);
 }
 .resumo-erros li + li {
   margin-top: 6px;
 }
 #resultado-cadastro {
   padding: 14px;
-  background: #edf7ee;
-  border: 1px solid #286238;
+  background: var(--fundo-sucesso);
+  border: 1px solid var(--borda-sucesso);
 }
 .botao:disabled {
   cursor: default;
@@ -346,6 +376,6 @@ button {
   scroll-margin-top: 24px;
 }
 input[type="date"]:focus-within {
-  outline: 3px solid #005fcc;
+  outline: 3px solid var(--foco);
   outline-offset: 3px;
 }
