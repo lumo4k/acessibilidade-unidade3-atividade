@@ -108,7 +108,7 @@ body {
 #miolo {
   display: flex;
   gap: 28px;
-  padding: 24px;
+  padding: 32px 24px;
   margin-top: 14px;
   align-items: flex-start;
 }
@@ -148,7 +148,7 @@ h2 {
 .cartao {
   border: 1px solid var(--borda-painel);
   border-radius: 8px;
-  padding: 14px;
+  padding: 18px;
   margin: 0;
 }
 .botao {
@@ -244,7 +244,7 @@ input[type="tel"] {
   margin: 0;
 }
 .preco {
-  margin: 0;
+  margin: 4px 0 12px;
 }
 .botao {
   border: 0;
@@ -268,9 +268,9 @@ caption {
 }
 fieldset {
   min-width: 0;
-  margin: 14px 0;
+  margin: 20px 0;
   border: 1px solid var(--borda-controle);
-  padding: 10px 14px;
+  padding: 14px 18px;
 }
 legend {
   font-weight: 600;
@@ -336,7 +336,7 @@ legend {
 }
 .pagina-cadastro {
   max-width: 780px;
-  padding: clamp(16px, 4vw, 24px);
+  padding: clamp(20px, 4vw, 32px);
   margin: 14px auto 0;
 }
 .pagina-cadastro input[type="date"],
