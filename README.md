@@ -16,6 +16,8 @@ Projeto da Unidade 3 de Acessibilidade da Fatec. A loja fictícia reúne um cat�
 
 Cada etapa foi integrada à `main` com um merge local que preserva os commits individuais.
 
+Use o seletor **Tema** no cabeçalho para escolher **Sistema**, **Claro** ou **Escuro**. A opção **Sistema** acompanha a preferência do dispositivo. O navegador guarda a escolha para as próximas visitas.
+
 ## Como executar
 
 Abra `index.html` no Chrome ou inicie um servidor estático na raiz do projeto.

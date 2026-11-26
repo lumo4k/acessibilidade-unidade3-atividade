@@ -1,31 +1,31 @@
 :root {
   color-scheme: light;
-  --texto: #1c1c1e;
-  --fundo: #edf4f2;
-  --superficie: #fff;
-  --cabecalho: #113c3c;
+  --texto: light-dark(#1c1c1e, #eff8f6);
+  --fundo: light-dark(#edf4f2, #101b1b);
+  --superficie: light-dark(#fff, #192827);
+  --cabecalho: light-dark(#113c3c, #143635);
   --texto-invertido: #fff;
   --texto-cabecalho: #c6e1db;
-  --menu: #195252;
-  --texto-suave: #5b6478;
-  --superficie-suave: #e5f1ee;
-  --painel: #eff7f5;
-  --borda-painel: #e0e4ee;
-  --acao: #8e381e;
-  --borda-tabela: #d9dee9;
-  --borda-controle: #c3c9d6;
+  --menu: light-dark(#195252, #204846);
+  --texto-suave: light-dark(#5b6478, #c0d6d1);
+  --superficie-suave: light-dark(#e5f1ee, #263b39);
+  --painel: light-dark(#eff7f5, #203432);
+  --borda-painel: light-dark(#e0e4ee, #45615d);
+  --acao: light-dark(#8e381e, #ffb699);
+  --borda-tabela: light-dark(#d9dee9, #536f6a);
+  --borda-controle: light-dark(#c3c9d6, #79938d);
   --link-rodape: #def0ea;
-  --aviso: #fff8e1;
-  --borda-aviso: #f0dfa8;
-  --foco: #12635c;
-  --instrucao: #454d60;
-  --erro: #a3261b;
-  --fundo-erro: #fff4f2;
-  --link-erro: #8d2118;
-  --fundo-sucesso: #edf7ee;
-  --borda-sucesso: #286238;
-  --link: #115f57;
-  --texto-acao: #fff;
+  --aviso: light-dark(#fff8e1, #40331f);
+  --borda-aviso: light-dark(#f0dfa8, #9c7d4c);
+  --foco: light-dark(#12635c, #96e6d4);
+  --instrucao: light-dark(#454d60, #c1d7d2);
+  --erro: light-dark(#a3261b, #ffaaa0);
+  --fundo-erro: light-dark(#fff4f2, #492b28);
+  --link-erro: light-dark(#8d2118, #ffd3cd);
+  --fundo-sucesso: light-dark(#edf7ee, #233d30);
+  --borda-sucesso: light-dark(#286238, #85c799);
+  --link: light-dark(#115f57, #a1ead9);
+  --texto-acao: light-dark(#fff, #3d1b0e);
   --foco-invertido: #ffcf87;
 }
 
@@ -406,29 +406,38 @@ input[type="date"]:focus-within {
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --fundo: #101b1b;
-    --superficie: #192827;
-    --texto: #eff8f6;
-    --cabecalho: #143635;
-    --menu: #204846;
-    --texto-suave: #c0d6d1;
-    --superficie-suave: #263b39;
-    --painel: #203432;
-    --borda-painel: #45615d;
-    --borda-tabela: #536f6a;
-    --borda-controle: #79938d;
-    --acao: #ffb699;
-    --texto-acao: #3d1b0e;
-    --aviso: #40331f;
-    --borda-aviso: #9c7d4c;
-    --foco: #96e6d4;
-    --instrucao: #c1d7d2;
-    --erro: #ffaaa0;
-    --fundo-erro: #492b28;
-    --link-erro: #ffd3cd;
-    --fundo-sucesso: #233d30;
-    --borda-sucesso: #85c799;
-    --link: #a1ead9;
+  }
+}
+
+:root[data-tema="claro"] {
+  color-scheme: light;
+}
+
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+}
+
+.controle-tema {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+.controle-tema select {
+  max-width: 100%;
+  padding: 5px 8px;
+  border: 1px solid var(--borda-controle);
+  border-radius: 5px;
+  background: var(--superficie);
+  color: var(--texto);
+  font: inherit;
+}
+
+@media (max-width: 560px) {
+  #topo {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
