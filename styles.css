@@ -208,13 +208,12 @@ input[type="tel"] {
   padding: 9px;
   border: 1px solid var(--borda-controle);
   border-radius: 5px;
-  margin-bottom: 12px;
   font: inherit;
 }
 .erro {
   color: var(--erro);
   font-size: 13px;
-  margin: -6px 0 12px;
+  margin: 6px 0 0;
 }
 #rodape {
   background: var(--cabecalho);
@@ -287,16 +286,33 @@ caption {
 .rotulo {
   display: block;
   font-weight: 600;
-  margin: 14px 0 6px;
+  margin: 0 0 6px;
 }
 fieldset {
   min-width: 0;
-  margin: 14px 0;
+  margin: 0;
   border: 1px solid var(--borda-controle);
-  padding: 10px 14px;
+  padding: 14px clamp(12px, 3vw, 24px) 18px;
 }
 legend {
+  padding-inline: 6px;
   font-weight: 600;
+}
+#form-cadastro {
+  margin-block-start: 24px;
+}
+#form-cadastro > :not([hidden]) + :not([hidden]),
+#form-cadastro > [hidden] + p {
+  margin-block-start: 24px;
+}
+#form-cadastro fieldset > .campo + .campo {
+  margin-block-start: 18px;
+}
+#form-cadastro fieldset > div:not(.campo) + div {
+  margin-block-start: 8px;
+}
+#form-cadastro > p + .botao {
+  margin-block-start: 0;
 }
 .ajuda {
   margin: -6px 0 12px;
@@ -352,8 +368,8 @@ legend {
 }
 .pagina-cadastro {
   max-width: 780px;
-  padding: clamp(16px, 4vw, 24px);
-  margin: 14px auto 0;
+  padding: clamp(28px, 5vw, 48px) var(--margem-pagina);
+  margin: 0 auto;
 }
 .pagina-cadastro input[type="date"],
 .pagina-cadastro select {
@@ -362,7 +378,6 @@ legend {
   padding: 9px;
   border: 1px solid var(--borda-controle);
   border-radius: 5px;
-  margin-bottom: 12px;
   font: inherit;
   background: var(--superficie);
   color: inherit;
@@ -378,9 +393,6 @@ legend {
   margin: 0;
   padding: 0;
   border: 0;
-}
-.erro {
-  margin: 0 0 12px;
 }
 [aria-invalid="true"] {
   border: 2px solid var(--erro) !important;
