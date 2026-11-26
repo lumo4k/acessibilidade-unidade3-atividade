@@ -125,7 +125,6 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   submitted = true;
   result.textContent = '';
-  // Não envia, persiste ou expõe dados pessoais e senhas nesta demonstração.
   if (document.getElementById('website').value) {
     summary.textContent = 'Não foi possível validar este cadastro. Recarregue a página e tente novamente.';
     summary.focus();
