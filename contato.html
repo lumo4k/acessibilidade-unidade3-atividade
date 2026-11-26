@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="atalho-conteudo" href="#cadastro-conteudo">Pular para o conteúdo principal</a>
+  <a class="atalho-conteudo" href="#cadastro-conteudo">Pular para o conte?do principal</a>
 
 <div class="wrap">
 
@@ -18,16 +18,17 @@
     <div class="titulo-principal">Harmonia Instrumentos Musicais</div>
     <div class="subtitulo">Tudo para o seu som desde 1998</div>
   </div>
-  <button class="botao-tema" type="button" aria-pressed="false" hidden>Tema escuro</button>
+  <a href="carrinho.html"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%229%22%20cy%3D%2220%22%20r%3D%221.4%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2220%22%20r%3D%221.4%22%2F%3E%3Cpath%20d%3D%22M1.5%202h3l2.7%2012.4a2%202%200%200%200%202%201.6h8.1a2%202%200%200%200%202-1.6L21%206H6%22%2F%3E%3C%2Fsvg%3E" width="34" height="34" alt="Ver carrinho de compras"></a>
+  <button class="botao-tema" type="button" hidden>Ativar tema escuro</button>
 </header>
 
 <nav id="menu" aria-label="Principal">
   <ul>
     <li><a href="index.html">Início</a></li>
-    <li><a href="index.html#guitarras">Guitarras</a></li>
-    <li><a href="index.html#baterias">Baterias</a></li>
-    <li><a href="index.html#teclados">Teclados</a></li>
-    <li><a href="contato.html" aria-current="page">Cadastro</a></li>
+    <li><a href="guitarras.html">Guitarras</a></li>
+    <li><a href="baterias.html">Baterias</a></li>
+    <li><a href="teclados.html">Teclados</a></li>
+    <li><a href="contato.html" aria-current="page">Contato</a></li>
   </ul>
 </nav>
 
@@ -37,7 +38,7 @@
 <main id="cadastro-conteudo" tabindex="-1" class="pagina-cadastro">
   <h1 class="titulo-pagina">Contato e cadastro</h1>
   <p>Cadastre seus dados e preferências para falar com a Harmonia.</p>
-  <p class="aviso">Use dados fictícios. Preencha os campos marcados como obrigatórios. Os demais são opcionais.</p>
+  <p class="aviso">Os campos identificados como “obrigatório” precisam ser preenchidos. Os demais são opcionais.</p>
   <div id="resumo-erros" class="resumo-erros" role="alert" tabindex="-1" aria-atomic="true"></div>
   <p id="resultado-cadastro" role="status" aria-atomic="true"></p>
   <noscript><p class="aviso">Ative o JavaScript para validar este cadastro e receber as mensagens de feedback.</p></noscript>
@@ -125,7 +126,7 @@
       <label for="website">Deixe este campo vazio</label>
       <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
     </div>
-    <p>Os dados são validados nesta página e não são enviados nem armazenados.</p>
+    <p>Este formulário é uma demonstração: os dados são validados nesta página e não são enviados nem armazenados.</p>
     <button type="submit" class="botao" disabled>Validar cadastro</button>
   </form>
 </main>
@@ -133,7 +134,7 @@
 <footer id="rodape">
   Harmonia Instrumentos Musicais &bull; CNPJ 00.000.000/0001-00 &bull;
   <a href="termos.html">Termos de uso</a> &bull;
-  <a href="termos.html#dados">Privacidade</a>
+  <a href="privacidade.html">Privacidade</a>
 </footer>
 
 </div>

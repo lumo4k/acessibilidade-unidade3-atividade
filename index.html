@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="atalho-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+  <a class="atalho-conteudo" href="#conteudo">Pular para o conte?do principal</a>
 
 <div class="wrap">
 
@@ -17,23 +17,25 @@
     <div class="titulo-principal">Harmonia Instrumentos Musicais</div>
     <div class="subtitulo">Tudo para o seu som desde 1998</div>
   </div>
-  <button class="botao-tema" type="button" aria-pressed="false" hidden>Tema escuro</button>
+  <a href="carrinho.html"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%229%22%20cy%3D%2220%22%20r%3D%221.4%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2220%22%20r%3D%221.4%22%2F%3E%3Cpath%20d%3D%22M1.5%202h3l2.7%2012.4a2%202%200%200%200%202%201.6h8.1a2%202%200%200%200%202-1.6L21%206H6%22%2F%3E%3C%2Fsvg%3E" width="34" height="34" alt="Ver carrinho de compras"></a>
+  <button class="botao-tema" type="button" hidden>Ativar tema escuro</button>
 </header>
 
 <nav id="menu" aria-label="Principal">
   <ul>
-    <li><a href="index.html" aria-current="page">Início</a></li>
-    <li><a href="#guitarras">Guitarras</a></li>
-    <li><a href="#baterias">Baterias</a></li>
-    <li><a href="#teclados">Teclados</a></li>
-    <li><a href="contato.html">Cadastro</a></li>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="guitarras.html">Guitarras</a></li>
+    <li><a href="baterias.html">Baterias</a></li>
+    <li><a href="teclados.html">Teclados</a></li>
+    <li><a href="contato.html">Contato</a></li>
   </ul>
 </nav>
 
 <nav id="trilha" aria-label="Caminho de navegação">
   <ol>
-    <li><a href="index.html" aria-current="page">Início</a></li>
-    <li aria-current="page">Catálogo</li>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="guitarras.html">Guitarras</a></li>
+    <li aria-current="page">Guitarras Elétricas</li>
   </ol>
 </nav>
 
@@ -45,14 +47,15 @@
 
     <p>
       Bem-vindo à nossa loja. Trabalhamos com <strong>as melhores marcas</strong> do mercado e oferecemos
-      <em>garantia estendida</em> em todos os produtos. Para informações sobre trocas, <a href="contato.html">fale com a Harmonia</a>.
+      <em>garantia estendida</em> em todos os produtos. Nossa nova <ins>política de trocas</ins> entrou em vigor
+      neste mês. Conheça a <a href="politica.html">política de trocas</a>.
     </p>
 
-    <h2 id="guitarras">Guitarras</h2>
+    <h2>Guitarras</h2>
 
     <p>
       Confira nossa linha completa de guitarras elétricas e acústicas. Todos os modelos passam por
-      revisão técnica antes do envio. Consulte o <a href="#comparativo">comparativo de guitarras</a>.
+      revisão técnica antes do envio. Veja o <a href="catalogo.pdf" target="_blank" rel="noopener">catálogo completo de guitarras (PDF, abre em nova aba)</a>.
     </p>
 
     <h3>Guitarras Elétricas</h3>
@@ -61,18 +64,22 @@
       <li class="cartao">
         <h4>Stratocaster HSS</h4>
         <p class="preco">R$ 4.290,00</p>
-        <a class="botao" href="contato.html">Consultar disponibilidade <span class="sr-only">de Stratocaster HSS</span></a>
+        <form action="carrinho.html" method="get">
+          <button type="submit" name="produto" value="101" class="botao">Adicionar ao carrinho<span class="sr-only">: Stratocaster HSS</span></button>
+        </form>
       </li>
       <li class="cartao">
         <h4>Les Paul Standard</h4>
         <p class="preco">R$ 7.150,00</p>
-        <a class="botao" href="contato.html">Consultar disponibilidade <span class="sr-only">de Les Paul Standard</span></a>
+        <form action="carrinho.html" method="get">
+          <button type="submit" name="produto" value="102" class="botao">Adicionar ao carrinho<span class="sr-only">: Les Paul Standard</span></button>
+        </form>
       </li>
     </ul>
 
-    <h2 id="baterias">Baterias</h2>
+    <h2>Baterias</h2>
 
-    <p>Kits acústicos e eletrônicos para estúdio e palco.</p>
+    <p>Kits acústicos e eletrônicos para estúdio e palco. <a href="baterias.html">Conheça os kits de bateria</a>.</p>
 
     <h3>Bateria Eletrônica</h3>
 
@@ -83,12 +90,12 @@
     <ul class="categorias">
       <li>Guitarras e Baixos</li>
       <li>Baterias e Percussão</li>
-      <li id="teclados">Teclados e Sintetizadores</li>
+      <li>Teclados e Sintetizadores</li>
       <li>Microfones</li>
       <li>Acessórios</li>
     </ul>
 
-    <h2 id="comparativo">Comparativo de modelos</h2>
+    <h2>Comparativo de modelos</h2>
 
     <table>
       <caption>Características e preços das guitarras elétricas</caption>
@@ -129,9 +136,9 @@
   <aside class="lateral" aria-labelledby="relacionados-titulo">
     <h2 id="relacionados-titulo">Conteúdo relacionado</h2>
     <ul>
-      <li>Confira a afinação antes de tocar, especialmente depois de trocar as cordas.</li>
-      <li>Limpe as cordas com um pano seco após tocar.</li>
-      <li><a href="#comparativo">Compare os modelos de guitarra</a>.</li>
+      <li><a href="afinacao.html">Aprenda a afinar sua guitarra</a>.</li>
+      <li><a href="manutencao.html">Saiba mais sobre manutenção de instrumentos</a>.</li>
+      <li><a href="blog.html" target="_blank" rel="noopener">Leia o blog da Harmonia (abre em nova aba)</a>.</li>
     </ul>
   </aside>
 
@@ -140,7 +147,7 @@
 <footer id="rodape">
   Harmonia Instrumentos Musicais &bull; CNPJ 00.000.000/0001-00 &bull;
   <a href="termos.html">Termos de uso</a> &bull;
-  <a href="termos.html#dados">Privacidade</a>
+  <a href="privacidade.html">Privacidade</a>
 </footer>
 
 </div>
