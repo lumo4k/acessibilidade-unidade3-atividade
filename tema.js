@@ -1,25 +1,27 @@
 (() => {
-  const temas = ['sistema', 'claro', 'escuro'];
   const chave = 'harmonia-tema';
-  let tema = 'sistema';
+  const raiz = document.documentElement;
+  const preferencia = matchMedia('(prefers-color-scheme: dark)');
 
   try {
     const salvo = localStorage.getItem(chave);
-    if (temas.includes(salvo)) tema = salvo;
-  } catch {
-    tema = 'sistema';
-  }
-
-  document.documentElement.dataset.tema = tema;
+    if (salvo === 'claro' || salvo === 'escuro') raiz.dataset.tema = salvo;
+  } catch {}
 
   document.addEventListener('DOMContentLoaded', () => {
-    const seletor = document.getElementById('tema');
-    seletor.value = tema;
-    seletor.closest('.controle-tema').hidden = false;
-    seletor.addEventListener('change', () => {
-      document.documentElement.dataset.tema = seletor.value;
+    const botao = document.querySelector('.botao-tema');
+    const temaEscuro = () => raiz.dataset.tema ? raiz.dataset.tema === 'escuro' : preferencia.matches;
+    const atualizar = () => botao.setAttribute('aria-pressed', String(temaEscuro()));
+
+    atualizar();
+    botao.hidden = false;
+    preferencia.addEventListener('change', atualizar);
+
+    botao.addEventListener('click', () => {
+      raiz.dataset.tema = temaEscuro() ? 'claro' : 'escuro';
+      atualizar();
       try {
-        localStorage.setItem(chave, seletor.value);
+        localStorage.setItem(chave, raiz.dataset.tema);
       } catch {}
     });
   });

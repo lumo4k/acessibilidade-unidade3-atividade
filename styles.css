@@ -1,67 +1,48 @@
 :root {
   color-scheme: light;
-  --texto: light-dark(#1c1c1e, #eff8f6);
-  --fundo: light-dark(#edf4f2, #101b1b);
-  --superficie: light-dark(#fff, #192827);
-  --cabecalho: light-dark(#113c3c, #143635);
+  --texto: light-dark(#1c1c1e, #f3f4f6);
+  --fundo: light-dark(#f6f6f8, #111827);
+  --superficie: light-dark(#fff, #1f2937);
+  --cabecalho: light-dark(#1f2a44, #0f172a);
   --texto-invertido: #fff;
-  --texto-cabecalho: #c6e1db;
-  --menu: light-dark(#195252, #204846);
-  --texto-suave: light-dark(#5b6478, #c0d6d1);
-  --superficie-suave: light-dark(#e5f1ee, #263b39);
-  --painel: light-dark(#eff7f5, #203432);
-  --borda-painel: light-dark(#e0e4ee, #45615d);
-  --acao: light-dark(#8e381e, #ffb699);
-  --borda-tabela: light-dark(#d9dee9, #536f6a);
-  --borda-controle: light-dark(#c3c9d6, #79938d);
-  --link-rodape: #def0ea;
+  --texto-cabecalho: light-dark(#b9c4de, #cbd5e1);
+  --menu: light-dark(#2c3a5e, #1e293b);
+  --texto-suave: light-dark(#5b6478, #cbd5e1);
+  --superficie-suave: light-dark(#eef0f5, #111827);
+  --painel: light-dark(#f2f4f9, #0f172a);
+  --borda-painel: light-dark(#e0e4ee, #475569);
+  --acao: light-dark(#c0392b, #ffb699);
+  --borda-tabela: light-dark(#d9dee9, #475569);
+  --borda-controle: light-dark(#c3c9d6, #8292a9);
+  --link-rodape: #dbe2f2;
   --aviso: light-dark(#fff8e1, #40331f);
   --borda-aviso: light-dark(#f0dfa8, #9c7d4c);
-  --foco: light-dark(#12635c, #96e6d4);
-  --instrucao: light-dark(#454d60, #c1d7d2);
+  --foco: light-dark(#005fcc, #93c5fd);
+  --instrucao: light-dark(#454d60, #cbd5e1);
   --erro: light-dark(#a3261b, #ffaaa0);
   --fundo-erro: light-dark(#fff4f2, #492b28);
   --link-erro: light-dark(#8d2118, #ffd3cd);
   --fundo-sucesso: light-dark(#edf7ee, #233d30);
   --borda-sucesso: light-dark(#286238, #85c799);
-  --link: light-dark(#115f57, #a1ead9);
+  --link: light-dark(#075c82, #bfdbfe);
   --texto-acao: light-dark(#fff, #3d1b0e);
-  --foco-invertido: #ffcf87;
+  --foco-invertido: #fff;
 }
 
 .atalho-conteudo {
   position: absolute;
-  inset-block-start: 8px;
-  inset-inline-start: 16px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  max-width: calc(100% - 32px);
-  padding: 8px 14px;
-  border: 1px solid var(--borda-controle);
-  border-radius: 8px;
+  z-index: 1;
+  top: 12px;
+  left: 12px;
+  padding: 10px 16px;
   background: var(--superficie);
-  color: var(--link);
-  font-weight: 700;
-  text-decoration: none;
-}
-.atalho-conteudo::after {
-  content: "";
-  width: 0.5em;
-  height: 0.5em;
-  margin-inline-start: 0.75em;
-  border: solid currentColor;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  color: var(--texto);
 }
 .atalho-conteudo:not(:focus) {
   clip-path: inset(50%);
   width: 1px;
   height: 1px;
-  min-height: 0;
   padding: 0;
-  border: 0;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -88,7 +69,6 @@ body {
   background: var(--superficie);
 }
 #topo {
-  position: relative;
   background: var(--cabecalho);
   color: var(--texto-invertido);
   padding: 32px 24px;
@@ -128,7 +108,7 @@ body {
 #miolo {
   display: flex;
   gap: 28px;
-  padding: 24px;
+  padding: 32px 24px;
   margin-top: 14px;
   align-items: flex-start;
 }
@@ -168,7 +148,7 @@ h2 {
 .cartao {
   border: 1px solid var(--borda-painel);
   border-radius: 8px;
-  padding: 14px;
+  padding: 18px;
   margin: 0;
 }
 .botao {
@@ -264,7 +244,7 @@ input[type="tel"] {
   margin: 0;
 }
 .preco {
-  margin: 0;
+  margin: 4px 0 12px;
 }
 .botao {
   border: 0;
@@ -288,9 +268,9 @@ caption {
 }
 fieldset {
   min-width: 0;
-  margin: 14px 0;
+  margin: 20px 0;
   border: 1px solid var(--borda-controle);
-  padding: 10px 14px;
+  padding: 14px 18px;
 }
 legend {
   font-weight: 600;
@@ -356,7 +336,7 @@ legend {
 }
 .pagina-cadastro {
   max-width: 780px;
-  padding: clamp(16px, 4vw, 24px);
+  padding: clamp(20px, 4vw, 32px);
   margin: 14px auto 0;
 }
 .pagina-cadastro input[type="date"],
@@ -437,27 +417,27 @@ input[type="date"]:focus-within {
   color-scheme: dark;
 }
 
-.controle-tema {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 10px;
+.botao-tema {
+  justify-self: end;
+  padding: 8px 12px;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
 }
 
-.controle-tema select {
-  max-width: 100%;
-  padding: 5px 8px;
-  border: 1px solid var(--borda-controle);
-  border-radius: 5px;
+.botao-tema:hover,
+.botao-tema[aria-pressed="true"] {
   background: var(--superficie);
   color: var(--texto);
-  font: inherit;
 }
 
-@media (max-width: 560px) {
-  #topo {
-    grid-template-columns: 1fr;
-    gap: 12px;
+@media (max-width: 480px) {
+  .botao-tema {
+    grid-column: 1 / -1;
+    justify-self: start;
   }
 }
 

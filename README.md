@@ -16,8 +16,6 @@ Projeto da Unidade 3 de Acessibilidade da Fatec. A loja fictícia reúne um cat�
 
 Cada etapa foi integrada à `main` com um merge local que preserva os commits individuais.
 
-Use o seletor **Tema** no cabeçalho para escolher **Sistema**, **Claro** ou **Escuro**. A opção **Sistema** acompanha a preferência do dispositivo. O navegador guarda a escolha para as próximas visitas.
-
 ## Como executar
 
 Abra `index.html` no Chrome ou inicie um servidor estático na raiz do projeto.
@@ -27,6 +25,8 @@ python -m http.server 8000
 ```
 
 No navegador, acesse `http://localhost:8000/index.html`. O cadastro fica em `contato.html` e os termos ficam em `termos.html`. Use dados fictícios no cadastro. A validação ocorre no navegador, sem envio ou armazenamento pela aplicação.
+
+O botão **Tema escuro** no cabeçalho alterna entre os temas claro e escuro. O site começa com a preferência do dispositivo e guarda a escolha feita pelo botão.
 
 ## Verificação da acessibilidade
 
