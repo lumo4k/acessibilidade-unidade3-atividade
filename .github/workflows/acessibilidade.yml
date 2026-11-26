@@ -9,6 +9,8 @@ on:
   pull_request:
     paths:
       - '**.html'
+      - '**.css'
+      - '**.js'
       - '.htmlvalidate.json'
       - '.github/workflows/acessibilidade.yml'
       - '.github/scripts/**'
@@ -47,7 +49,7 @@ jobs:
       - name: Validar o HTML
         id: htmlvalidate
         continue-on-error: true
-        run: npx --yes html-validate@8 index.html > html-validate.txt 2>&1
+        run: npx --yes html-validate@8 '*.html' > html-validate.txt 2>&1
 
       # ------------------------------------------------------------------
       # 2. Varredura de acessibilidade (axe-core, WCAG 2.1 AA)
@@ -60,7 +62,14 @@ jobs:
       - name: Rodar o axe-core
         id: axe
         continue-on-error: true
-        run: node .github/scripts/verificar-acessibilidade.mjs index.html > axe.md 2>&1
+        run: |
+          for pagina in *.html; do
+            echo "### $pagina"
+            node .github/scripts/verificar-acessibilidade.mjs "$pagina"
+          done > axe.md 2>&1
+
+      - name: Testar o cadastro e o feedback acessível
+        run: node .github/scripts/testar-cadastro.cjs
 
       # ------------------------------------------------------------------
       # 3. Relatório no resumo do job
@@ -71,7 +80,7 @@ jobs:
           {
             echo "# Relatório de acessibilidade"
             echo
-            echo "Arquivo verificado: \`index.html\`"
+            echo "Arquivos verificados: todas as páginas HTML da raiz."
             echo
 
             echo "## 1. Validação de HTML"
