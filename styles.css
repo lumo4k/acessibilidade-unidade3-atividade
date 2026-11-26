@@ -428,8 +428,7 @@ input[type="date"]:focus-within {
   cursor: pointer;
 }
 
-.botao-tema:hover,
-.botao-tema[aria-pressed="true"] {
+.botao-tema:hover {
   background: var(--superficie);
   color: var(--texto);
 }
