@@ -1,4 +1,4 @@
-﻿# Atividade 5 — Cadastro e feedback acessível
+# Atividade 5 — Cadastro e feedback acessível
 
 ## Organização
 
@@ -9,7 +9,7 @@
 - `termos.html`: termos da demonstração, acessíveis pelo formulário.
 - `.github/scripts/testar-cadastro.cjs`: testes de interação e acessibilidade.
 
-Os novos requisitos desta atividade autorizam JavaScript e substituem a proibição do README da atividade anterior. O cadastro é demonstrativo: não envia nem armazena dados e não cria contas. O honeypot bloqueia a confirmação se preenchido; uma aplicação real também precisa validar os dados e aplicar a proteção anti-spam no servidor.
+O cadastro usa JavaScript para validação e feedback. A demonstração não envia nem armazena dados e não cria contas. O honeypot bloqueia a confirmação se preenchido; uma aplicação real também precisa validar os dados e aplicar a proteção anti-spam no servidor.
 
 ## Resultados
 

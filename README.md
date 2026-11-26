@@ -1,157 +1,45 @@
-# Atividade — Conserte a página
+# Harmonia Instrumentos Musicais
 
-**Unidade 3 · HTML Semântico: a Base da Acessibilidade**
+Projeto da Unidade 3 de Acessibilidade da Fatec. A loja fictícia reúne um catálogo de instrumentos, uma tabela comparativa e um cadastro demonstrativo com validação acessível.
 
-Esta é a página da loja fictícia **Harmonia Instrumentos Musicais**. Abra `index.html` no navegador: o layout está alinhado, as cores estão certas, os botões clicam. Nenhum cliente que enxerga reclamou.
+## O que foi implementado
 
-A loja recebeu uma reclamação de um cliente que usa leitor de tela. Ele não consegue encontrar o conteúdo principal, não sabe para onde os links levam e desistiu do formulário de contato.
+| Branch | Implementação |
+| --- | --- |
+| `correcao` | Estrutura semântica com regiões da página, títulos hierárquicos, listas, tabela com legenda e cabeçalhos associados. A navegação leva a seções e páginas disponíveis no projeto. |
+| `skip-link` | Atalho “Pular para o conteúdo principal” nas três páginas. O primeiro Tab revela o atalho e Enter posiciona o foco no conteúdo. |
+| `prefers-color-scheme` | Paleta própria com variáveis CSS e temas claro e escuro conforme a preferência do sistema. |
+| `prefers-reduced-motion` | A transição dos botões é desativada quando o sistema solicita movimento reduzido. |
+| `formulario-cadastro` | Cadastro com rótulos, grupos de campos, instruções e validação ao sair do campo e ao enviar. O resumo de erros recebe foco e oferece links para corrigir cada campo. O sucesso é anunciado por uma região de status. |
+| `responsividade` | Navegação com quebra de linha, grade de produtos ajustável, tabela que cabe na página e campos fluidos em telas estreitas. |
+| `documentacao` | Instruções para executar, testar e publicar o projeto, além dos resultados da avaliação. |
 
-**A página tem 34 problemas de semântica e acessibilidade. Sua tarefa é consertá-los.**
+Cada etapa foi integrada à `main` com um merge local que preserva os commits individuais.
 
----
+## Como executar
 
-## O que você vai entregar
+Abra `index.html` no Chrome ou inicie um servidor estático na raiz do projeto.
 
-1. Um **fork** deste repositório com o `index.html` corrigido.
-2. Uma **página publicada no GitHub Pages** mostrando sua versão corrigida.
-3. Um **Pull Request** para este repositório, com o link do seu Pages no corpo do PR.
-
-O Pull Request **é** a entrega. O diff dele mostra exatamente o que você mudou  é isso que será avaliado. Ele não será mesclado; será revisado, comentado e fechado.
-
----
-
-## Passo a passo
-
-### 1. Faça o fork
-
-Clique em **Fork**, no topo desta página. Você vai ficar com uma cópia do repositório na sua conta.
-
-### 2. Traga para o seu computador
-
-```bash
-git clone https://github.com/SEU-USUARIO/acessibilidade-unidade3-atividade.git cd acessibilidade-unidade3-atividade
-git checkout -b correcao
+```powershell
+python -m http.server 8000
 ```
 
-> Nunca trabalhe direto na branch `main`. Trabalhe na branch `correcao`.
+No navegador, acesse `http://localhost:8000/index.html`. O cadastro fica em `contato.html` e os termos ficam em `termos.html`. Use dados fictícios no cadastro. A validação ocorre no navegador, sem envio ou armazenamento pela aplicação.
 
-### 3. Conserte o `index.html`
+## Verificação da acessibilidade
 
-Use o [`CHECKLIST.md`](CHECKLIST.md) como guia. Ele tem 7 blocos de verificação, na mesma ordem da aula: apresentação vs. semântica, cabeçalhos, landmarks, tabelas, links e botões, listas e formulários.
+| Página | Lighthouse no Chrome |
+| --- | ---: |
+| Catálogo (`index.html`) | 100/100 |
+| Cadastro (`contato.html`) | 100/100 |
+| Termos (`termos.html`) | 100/100 |
 
-**Regras da correção:**
+Medição local com Lighthouse 12.8.2, categoria Acessibilidade, em 25/11/2026. O axe-core também foi executado nas três páginas nos temas claro e escuro, com zero violações detectadas. Foram verificados o foco do atalho por teclado, os destinos dos links e a ausência de rolagem horizontal na página em larguras de 320, 390, 768 e 1280 px.
 
-- Você pode acrescentar, trocar e remover tags HTML à vontade.
-- Você pode ajustar os seletores do CSS para acompanhar as tags novas.
-- **Mantenha o layout**: mesmas cores, mesmas colunas, mesmos cartões, mesma tabela. Trocar `<div>` por `<main>` ou `<td>` por `<th>` não deve reposicionar nada na tela.
-- Exceção: algumas correções **acrescentam informação visível** de propósito o aviso "(abre em nova aba)", o texto "(obrigatório)", o `<caption>` da tabela, a borda do `<fieldset>`e mensagens de erro específicas. Essas mudanças são esperadas.
-- Não use JavaScript. Não use ARIA onde uma tag HTML nativa já resolve o problema.
-  
-> Se ao final a página ficou visualmente equivalente e estruturalmente diferente, você entendeu a aula.
+Para repetir a medição, abra cada página pelo servidor local. No Chrome DevTools, selecione **Lighthouse**, marque **Accessibility** e execute a auditoria. As instruções para repetir a validação HTML e os testes automatizados do cadastro estão em [TESTES.md](TESTES.md).
 
-### 4. Faça commits pequenos
+## Publicação
 
-Um commit por bloco do checklist ajuda muito na hora da revisão:
+Após enviar a `main` e as branches de cada etapa ao fork, abra **Settings → Pages**, selecione **Deploy from a branch** e escolha **main** e **/ (root)**. Use o endereço que o GitHub Pages confirmar no corpo do pull request para a branch `main` do repositório-base.
 
-```bash
-git add index.html
-git commit -m "Corrige hierarquia de cabecalhos"
-```
-
-Sugestão de mensagens: `Adiciona landmarks`, `Corrige textos de link`, `Transforma tabela de layout em CSS Grid`, `Associa labels aos campos do formulario`.
-
-### 5. Envie para o seu fork
-
-```bash
-git push -u origin correcao
-```
-
-### 6. Publique no GitHub Pages
-
-No **seu fork**: `Settings` → `Pages` → em **Source**, escolha `Deploy from a branch` → selecione a branch **`correcao`** e a pasta **`/ (root)`** → `Save`.
-
-Espere de 1 a 2 minutos e recarregue a página de Settings. O endereço vai aparecer no topo, no formato:
-
-```
-https://SEU-USUARIO.github.io/acessibilidade-unidade3-atividade/
-```
-
-**Confira que o link abre a sua versão corrigida** antes de continuar.
-
-Se você não tem certeza de nenhum destes passos, veja o [`GUIA-GIT-E-PAGES.md`](GUIA-GIT-E-PAGES.md), que tem os comandos comentados e o caminho pelo site do GitHub.
-
-### 7. Abra o Pull Request
-
-No seu fork, clique em **Contribute** → **Open pull request**.
-
-- **Base:** `main` deste repositório (o do professor)
-- **Compare:** a sua branch `correcao`
-
-O corpo do PR já vem com um formulário. Preencha, principalmente:
-
-- o **link do seu GitHub Pages**;
-- a lista dos problemas que você corrigiu, agrupados pelos 7 blocos;
-- por que cada troca melhora a experiência de quem usa tecnologia assistiva.
-
-Pronto. A entrega está feita.
-
----
-
-## Verificação automática
-
-Assim que o PR abrir, um teste automático roda sobre a sua página e publica um relatório. Para ver: aba **Checks** do seu PR → **Acessibilidade** → abra o resumo do job.
-
-O relatório traz validação de HTML e uma varredura WCAG 2.1 AA com o axe-core. Use como apoio mas leia com atenção o que vem a seguir.
-
-Na versão original desta página, as duas ferramentas juntas apontam **menos da metade** dos 34 problemas. O axe encontra 6 tipos de problema; o validador de HTML, 15 erros de sintaxe. Nenhum dos dois percebe:
-
-- textos de link sem sentido isolado ("clique aqui", "saiba mais")
-- `<div>` fazendo papel de botão, inalcançável pelo teclado
-- lista simulada com `<br>` em vez de `<ul>`
-- tabela usada para layout
-- `<td>` estilizado no lugar de `<th scope>`
-- `<caption>` ausente
-- grupo de campos sem `<fieldset>`/`<legend>`
-- `<b>`/`<i>`/`<u>` onde cabia `<strong>`/`<em>`/`<ins>`
-- texto alternativo que existe mas não descreve nada útil
-- mensagens de erro genéricas como "Erro."
-
-**Um relatório limpo não significa que a página está correta.** Essa é, aliás, uma das lições mais importantes da unidade: acessibilidade não se resolve rodando uma ferramenta. O checklist continua sendo o guia.
-
----
-
-## Como você será avaliado
-
-| Faixa        | Critério                                                                                            |
-| ------------ | --------------------------------------------------------------------------------------------------- |
-| Insuficiente | Menos de 10 itens corrigidos, ou mudanças apenas no CSS                                             |
-| Suficiente   | Cabeçalhos e landmarks corrigidos (blocos 2 e 3)                                                    |
-| Bom          | Acrescenta links, listas e tabela (blocos 4, 5 e 6)                                                 |
-| Excelente    | Formulário completo com `fieldset`/`legend`, `required` e mensagens de erro programáticas (bloco 7) |
-
-Achar 15 problemas com boa justificativa vale mais do que listar 30 sem explicar nenhum. A
-justificativa entra no corpo do PR.
-
----
-
-## Como testar o que você corrigiu
-
-1. **Só com o teclado.** Percorra a página inteira com Tab.
-   Você alcança e ativa todos os controles?
-   O foco fica visível?
-   Na versão original, os dois botões "Adicionar ao carrinho" são inalcançáveis descobrir por quê já resolve um dos 34 problemas.
-3. **Com leitor de tela.** No NVDA (gratuito, Windows): `H` pula entre cabeçalhos, `Insert + F7` abre a lista de elementos com as abas Links, Cabeçalhos e     Landmarks, `T` pula entre tabelas, `F` entre campos de formulário. Compare a lista de elementos antes e depois da sua correção.
-   No macOS, o VoiceOver (`Cmd + F5`) tem o rotor em `VO + U`.
-4. **Validador do W3C.** <https://validator.w3.org/nu/>
-5. **Comparação visual.** Abra a original e a sua versão em abas lado a lado.
-
----
-
-## Prazo e dúvidas
-
-Prazo: **09/09/2026**.
-
-Dúvidas sobre a atividade: abra uma **issue** neste repositório. Dúvidas sobre Git e GitHub Pages:
-Comece pelo [`GUIA-GIT-E-PAGES.md`](GUIA-GIT-E-PAGES.md).
-
-
+A loja partiu do [enunciado da atividade](https://github.com/pedrohenrikee/acessibilidade-unidade3-atividade). A organização visual tomou como referência a [versão Atualization](https://github.com/bryantheconnor-art/Instrumentos-Musicais-Acessibilidade-corre-o-atividade/tree/Atualization).
