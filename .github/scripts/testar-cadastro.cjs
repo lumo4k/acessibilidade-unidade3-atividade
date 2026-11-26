@@ -12,7 +12,7 @@ const { readFileSync } = require('node:fs');
     page.on('pageerror', error => errors.push(error.message));
     await page.goto(pathToFileURL(resolve('index.html')).href);
     assert.equal(await page.locator('form[action="/enviar"]').count(), 0);
-    await page.getByRole('link', { name: 'Preencha nosso formulário de cadastro e contato' }).click();
+    await page.getByRole('link', { name: 'página de contato e cadastro' }).click();
     await page.waitForURL('**/contato.html');
     assert.equal(await page.locator('#website').isVisible(), false);
     for (const field of await page.locator('#form-cadastro input, #form-cadastro select').all()) {

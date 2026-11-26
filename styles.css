@@ -446,6 +446,30 @@ input[type="date"]:focus-within {
   }
 }
 
+.destaque-loja,
+.oferta-loja {
+  margin-block: 24px;
+  padding: clamp(16px, 3vw, 24px);
+  background: var(--superficie-suave);
+  border: 1px solid var(--borda-painel);
+  border-radius: 8px;
+}
+
+.oferta-loja {
+  margin-inline: 16px;
+}
+
+.destaque-loja h2,
+.oferta-loja h2 {
+  margin-top: 8px;
+}
+
+.destaques-produtos {
+  margin-block: 24px;
+  padding-inline: 16px;
+  border-inline-start: 3px solid var(--borda-controle);
+}
+
 .botao:hover:not(:disabled) {
   box-shadow: 0 0 0 2px var(--superficie), 0 0 0 4px var(--acao);
 }

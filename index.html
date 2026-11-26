@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="atalho-conteudo" href="#conteudo">Pular para o conte?do principal</a>
+  <a class="atalho-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
 
 <div class="wrap">
 
@@ -45,6 +45,27 @@
 
     <h1 class="titulo-pagina">Loja de Instrumentos</h1>
 
+    <section class="destaque-loja" aria-labelledby="destaque-titulo">
+      <p>Promoção especial</p>
+      <h2 id="destaque-titulo">Instrumentos para o seu próximo show</h2>
+      <p>Descontos exclusivos em guitarras, teclados e acessórios com garantia estendida.</p>
+    </section>
+
+    <section class="destaques-produtos" aria-label="Destaques da loja">
+      <article>
+        <h2>Nova linha de guitarras</h2>
+        <p>Modelos com sons clássicos e acabamento premium para estudo, estúdio e palco.</p>
+      </article>
+      <article>
+        <h2>Baterias eletrônicas com tecnologia</h2>
+        <p>Pads sensíveis, módulos com sons realistas e conectividade para gravação.</p>
+      </article>
+      <article>
+        <h2>Teclados para produção musical</h2>
+        <p>Mais versatilidade com timbres em alta qualidade e recursos criativos.</p>
+      </article>
+    </section>
+
     <p>
       Bem-vindo à nossa loja. Trabalhamos com <strong>as melhores marcas</strong> do mercado e oferecemos
       <em>garantia estendida</em> em todos os produtos. Nossa nova <ins>política de trocas</ins> entrou em vigor
@@ -73,6 +94,13 @@
         <p class="preco">R$ 7.150,00</p>
         <form action="carrinho.html" method="get">
           <button type="submit" name="produto" value="102" class="botao">Adicionar ao carrinho<span class="sr-only">: Les Paul Standard</span></button>
+        </form>
+      </li>
+      <li class="cartao">
+        <h4>Telecaster Vintage</h4>
+        <p class="preco">R$ 3.980,00</p>
+        <form action="carrinho.html" method="get">
+          <button type="submit" name="produto" value="103" class="botao">Adicionar ao carrinho<span class="sr-only">: Telecaster Vintage</span></button>
         </form>
       </li>
     </ul>
@@ -129,7 +157,9 @@
       </tbody>
     </table>
 
-    <p>Quer falar com a Harmonia? <a href="contato.html">Preencha nosso formulário de cadastro e contato</a>.</p>
+    <h2>Fale com um vendedor</h2>
+    <p>Quer tirar dúvidas ou criar seu cadastro na loja? Use nosso formulário completo na
+      <a href="contato.html">página de contato e cadastro</a>.</p>
 
   </main>
 
@@ -143,6 +173,13 @@
   </aside>
 
 </div>
+
+<section class="oferta-loja" aria-labelledby="oferta-titulo">
+  <p>Oferta exclusiva</p>
+  <h2 id="oferta-titulo">Garanta sua guitarra com 15% de desconto na compra à vista</h2>
+  <p>Frete grátis para compras acima de R$ 1.000,00 e suporte especializado por especialistas da marca.</p>
+  <a href="guitarras.html" class="botao">Ver ofertas</a>
+</section>
 
 <footer id="rodape">
   Harmonia Instrumentos Musicais &bull; CNPJ 00.000.000/0001-00 &bull;
