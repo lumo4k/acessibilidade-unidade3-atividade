@@ -140,11 +140,16 @@ h3 {
 h2 {
   font-size: 21px;
 }
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 12px;
+}
 .cartao {
   border: 1px solid var(--borda-painel);
   border-radius: 8px;
   padding: 14px;
-  margin: 10px 0;
+  margin: 0;
 }
 .botao {
   display: inline-block;
